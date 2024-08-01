@@ -10,8 +10,7 @@ h1 {
     text-align: center;
 }
 
-.container {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 10px 0;
+label {
+    color: #B6154F;
+    font-weight: bold;
 }
