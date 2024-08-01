@@ -15,35 +15,80 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>
-        Calcola il prezzo del tuo biglietto
-    </h1>
-    <div>
-        <div class="card container">
-            <form>
-                <div class="mt-3 top-form row justify-content-center">
-                    <div class="col-3 d-flex flex-column">
-                        <label for="full-name" class="form-label text-center">Nome e Cognome</label>
-                        <input id="full-name" type="text" class="form-control" placeholder="Jacopo Legovini">
+    <main>
+
+        <h2>
+            Calcola il prezzo del tuo biglietto
+        </h2>
+        <div>
+            <div class="card card-top container">
+                <form>
+                    <div class="mt-3 top-form row justify-content-center">
+                        <div class="col-3 d-flex flex-column">
+                            <label for="full-name" class="form-label text-center">Nome e Cognome</label>
+                            <input id="full-name" type="text" class="form-control" placeholder="Jacopo Legovini">
+                        </div>
+                        <div class="col-3 d-flex flex-column">
+                            <label for="total-km" class="form-label text-center">Km da percorrere</label>
+                            <input id="total-km" type="number" class="form-control" placeholder="10">
+                        </div>
+                        <div class="col-3 d-flex flex-column">
+                            <label for="user-age" class="form-label text-center">Fascia d'età</label>
+                            <input id="user-age" type="number" class="form-control" placeholder="28">
+                        </div>
                     </div>
-                    <div class="col-3 d-flex flex-column">
-                        <label for="total-km" class="form-label text-center">Km da percorrere</label>
-                        <input id="total-km" type="number" class="form-control" placeholder="10">
+                    <div class="mt-3 mb-3 bottom-form d-flex justify-content-center gap-3">
+                        <button class="button-generate" type="button">Genera</button>
+                        <button class="button-delete" type="button">Annulla</button>
                     </div>
-                    <div class="col-3 d-flex flex-column">
-                        <label for="user-age" class="form-label text-center">Fascia d'età</label>
-                        <input id="user-age" type="number" class="form-control" placeholder="28">
-                    </div>
-                </div>
-                <div class="mt-3 bottom-form d-flex justify-content-center gap-3">
-                    <button class="button-generate" type="button">Genera</button>
-                    <button class="button-delete" type="button">Annulla</button>
-                </div>
-            </form>
-            <div id="price"></div>
-            <p id="young-sale"></p>
-            <p id="senior-sale"></p>
+                </form>
+            </div>
         </div>
-    </div>
+        <h2>
+            Il tuo biglietto
+        </h2>
+        <div class="card card-bottom container pt-2">
+            <h3>
+                Dettaglio passeggeri
+            </h3>
+            <div class="row card-bottom-bottom mt-3 mb-3">
+                <div class="col-3 col-sx">
+                    <h4>
+                        Nome Passeggero
+                    </h4>
+                </div>
+                <div class="col-9 col-dx row">
+                    <div class="col">
+                        <h5>
+                            Offerta
+                        </h5>
+                    </div>
+                    <div class="col">
+                        <h5>
+                            Carrozza
+                        </h5>
+                    </div>
+                    <div class="col">
+                        <h5>
+                            Codice CP
+                        </h5>
+                    </div>
+                    <div class="col">
+                        <h5>
+                            Costo biglietto
+                        </h5>
+                        <div id="price"></div>
+                    </div>
+                    <div class="col">
+                        <h5>
+                            Sconto
+                        </h5>
+                        <p id="young-sale"></p>
+                        <p id="senior-sale"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
