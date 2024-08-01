@@ -16,8 +16,12 @@ let youngDiscountElement = document.getElementById('young-sale');
 let seniorDiscountElement = document.getElementById('senior-sale');
 let totalKmField = document.getElementById('total-km');
 let userAgeField = document.getElementById('user-age');
-const button = document.querySelector('.button-generate');
+const buttonGenerate = document.querySelector('.button-generate');
+const buttonDelete = document.querySelector('.button-delete');
 const form = document.querySelector('form');
+let fullNameField = document.getElementById('full-name');
+let trainCarriageElement = document.getElementById('train-carriage');
+
 
 
 // Dichiarare le variabili
@@ -29,11 +33,14 @@ const seniorDiscount = pricePerKM - (0.21 * 40 / 100);
 
 
 // Fase di gestione degli eventi
-button.addEventListener ('click', function (){
+buttonGenerate.addEventListener ('click', function (){
 
     // Elaborazione dati
-    const KMNumber= totalKmField.value.trim();
-    const userAge = parseInt(userAgeField.value.trim())
+    const KMNumber= parseInt(totalKmField.value.trim());
+    const userAge = parseInt(userAgeField.value.trim());
+    const fullName = fullNameField.value;
+    const trainCarriage = trainCarriageElement;
+
     
     totalPrice = pricePerKM * KMNumber;
     if (userAge <= 18) {
@@ -43,27 +50,24 @@ button.addEventListener ('click', function (){
     }
     totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
 
-    
-    if (userAge <= 18) {
-        discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
-        youngDiscountElement.innerHTML = discountPrice.replace('.', ',') + '€';
-    } else if (userAge >= 65) {
-        discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
-        seniorDiscountElement.innerHTML = discountPrice.replace('.', ',') + '€';
-    }
-
     // Produzione output
-    
-    ticketPriceElement.innerHTML = totalPrice.replace('.', ',') + '€';
+    // Prices
+    ticketPriceElement.innerText = totalPrice.replace('.', ',') + '€';
     if (userAge <= 18) {
         discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
-        youngDiscountElement.innerHTML = `Hai risparmiato: <strong>${discountPrice.replace('.', ',')}€</strong>`;
+        youngDiscountElement.innerText = discountPrice.replace('.', ',') + '€';
     } else if (userAge >= 65) {
         discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
-        seniorDiscountElement.innerHTML = `Hai risparmiato: <strong>${discountPrice.replace('.', ',')}€</strong>`;
+        seniorDiscountElement.innerText = discountPrice.replace('.', ',') + '€';
     }
 
-    form.reset();
+    // Others data
+    fullNameField.innerText = fullName;
+    trainCarriageElement.innerText = Math.floor(Math.random() * 10) + 1;
+    
+    console.log(fullNameField);
 })
 
-
+buttonDelete.addEventListener('click', function() {
+    form.reset();
+})
