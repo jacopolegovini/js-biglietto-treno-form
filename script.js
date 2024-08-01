@@ -13,8 +13,8 @@ Fase di gestione
 
 // Preparazione
 let ticketPriceElement = document.getElementById('price');
-let youngDiscountElement = document.getElementById('young-sale');
-let seniorDiscountElement = document.getElementById('senior-sale');
+let youngDiscountElement = document.querySelector('.young-sale');
+let seniorDiscountElement = document.querySelector('.senior-sale');
 let totalKmField = document.getElementById('total-km');
 let userAgeField = document.getElementById('user-age');
 const buttonGenerate = document.querySelector('.button-generate');
@@ -25,6 +25,7 @@ let fullNameElement = document.getElementById('full-name');
 let trainCarriageElement = document.getElementById('train-carriage');
 let randomNumberElement = document.getElementById('random-number');
 let ticketTypeElement = document.getElementById('ticket-type');
+const cardBottomElement = document.querySelector('.card-bottom p');
 // let stadardAgeField = document.getElementById('maggiorenne');
 // let overAgeField = document.getElementById('senior');
 // let underAgeField = document.getElementById('senior');
@@ -70,7 +71,7 @@ buttonGenerate.addEventListener ('click', function (){
     // Produzione output
     // Prices
     ticketPriceElement.innerText = totalPrice.replace('.', ',') + '€';
-    if (userAge <= 18) {
+    if (userAge < 18) {
         discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
         youngDiscountElement.innerText = discountPrice.replace('.', ',') + '€';
     } else if (userAge >= 65) {
@@ -90,16 +91,11 @@ buttonGenerate.addEventListener ('click', function (){
 
     trainCarriageElement.innerText = Math.floor(Math.random() * 10) + 1;
     randomNumberElement.innerText = '9' + Math.floor(Math.random() * 9999) + 1;
-    
-    console.log (fullName);
-    console.log (fullNameField);
-    console.log (userAge);
-    console.log (userAgeField)
-    console.log (discountPrice)
-    console.log (seniorDiscountElement)
-
 })
 
 buttonDelete.addEventListener('click', function() {
     form.reset();
+    cardBottomElement.classList.add('test');
+
+    console.log(cardBottomElement)
 })
