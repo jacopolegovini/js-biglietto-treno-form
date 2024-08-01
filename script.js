@@ -20,15 +20,14 @@ let userAgeField = document.getElementById('user-age');
 const buttonGenerate = document.querySelector('.button-generate');
 const buttonDelete = document.querySelector('.button-delete');
 const form = document.querySelector('form');
-let fullNameField = document.getElementById('full-name');
+let fullNameField = document.getElementById('full-name-field');
+let fullNameElement = document.getElementById('full-name');
 let trainCarriageElement = document.getElementById('train-carriage');
 let randomNumberElement = document.getElementById('random-number');
 let ticketTypeElement = document.getElementById('ticket-type');
-let stadardAgeField = document.getElementById('maggiorenne');
-let overAgeField = document.getElementById('senior');
-let underAgeField = document.getElementById('senior');
-
-
+// let stadardAgeField = document.getElementById('maggiorenne');
+// let overAgeField = document.getElementById('senior');
+// let underAgeField = document.getElementById('senior');
 
 
 // Dichiarare le variabili
@@ -80,7 +79,8 @@ buttonGenerate.addEventListener ('click', function (){
     }
 
     // Others data
-    fullNameField.innerText = fullName;
+    // fullNameField.innerText = fullName;
+    fullNameElement.innerText = fullName;
 
     if (discountPrice) {
         ticketTypeElement.innerText = 'Biglietto Special'
@@ -90,6 +90,14 @@ buttonGenerate.addEventListener ('click', function (){
 
     trainCarriageElement.innerText = Math.floor(Math.random() * 10) + 1;
     randomNumberElement.innerText = '9' + Math.floor(Math.random() * 9999) + 1;
+    
+    console.log (fullName);
+    console.log (fullNameField);
+    console.log (userAge);
+    console.log (userAgeField)
+    console.log (discountPrice)
+    console.log (seniorDiscountElement)
+
 })
 
 buttonDelete.addEventListener('click', function() {
