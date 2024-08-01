@@ -12,8 +12,8 @@ Produzione output
 
 // Preparazione
 let ticketPriceElement = document.getElementById('price');
-// let youngDiscountElement = document.getElementById('young-sale');
-// let seniorDiscountElement = document.getElementById('senior-sale');
+let youngDiscountElement = document.getElementById('young-sale');
+let seniorDiscountElement = document.getElementById('senior-sale');
 let totalKmField = document.getElementById('total-km');
 let userAgeField = document.getElementById('user-age');
 const button = document.querySelector('button');
@@ -23,7 +23,7 @@ const button = document.querySelector('button');
 let totalPrice;
 let discountPrice;
 const pricePerKM = 0.21;
-youngDiscount = pricePerKM - (0.21 * 20 / 100);
+const youngDiscount = pricePerKM - (0.21 * 20 / 100);
 const seniorDiscount = pricePerKM - (0.21 * 40 / 100);
 
 
@@ -53,7 +53,6 @@ button.addEventListener ('click', function (){
         discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
         seniorDiscountElement.innerHTML = `Hai risparmiato: <strong>${discountPrice.replace('.', ',')}€</strong>`;
     }
-
 
     // Produzione output
     ticketPriceElement.innerHTML = `
