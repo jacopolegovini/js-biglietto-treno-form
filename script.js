@@ -5,9 +5,10 @@ Preparazione
 Dichiarare le variabili
 Fase di gestione
     Elaborazione dati
-    - Prezzo al chilometro per chilometri dichiarati
-    - Riduzione in base all'età
-Produzione output
+    Dichiarazione variabili
+        - Prezzo al chilometro per chilometri dichiarati
+        - Riduzione in base all'età
+    - Produzione output
 */
 
 // Preparazione
@@ -21,7 +22,8 @@ const buttonDelete = document.querySelector('.button-delete');
 const form = document.querySelector('form');
 let fullNameField = document.getElementById('full-name');
 let trainCarriageElement = document.getElementById('train-carriage');
-
+let randomNumberElement = document.getElementById('random-number');
+let ticketTypeElement = document.getElementById('ticket-type');
 
 
 // Dichiarare le variabili
@@ -36,10 +38,10 @@ const seniorDiscount = pricePerKM - (0.21 * 40 / 100);
 buttonGenerate.addEventListener ('click', function (){
 
     // Elaborazione dati
+    // Dichiarazione variabili
     const KMNumber= parseInt(totalKmField.value.trim());
     const userAge = parseInt(userAgeField.value.trim());
     const fullName = fullNameField.value;
-    const trainCarriage = trainCarriageElement;
 
     
     totalPrice = pricePerKM * KMNumber;
@@ -63,9 +65,15 @@ buttonGenerate.addEventListener ('click', function (){
 
     // Others data
     fullNameField.innerText = fullName;
+
+    if (discountPrice) {
+        ticketTypeElement.innerText = 'Biglietto Special'
+    } else {
+        ticketTypeElement.innerText = 'Biglietto Standard'
+    }
+
     trainCarriageElement.innerText = Math.floor(Math.random() * 10) + 1;
-    
-    console.log(fullNameField);
+    randomNumberElement.innerText = Math.floor(Math.random() * 99999) + 1;
 })
 
 buttonDelete.addEventListener('click', function() {
