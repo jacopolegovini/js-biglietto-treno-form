@@ -24,6 +24,11 @@ let fullNameField = document.getElementById('full-name');
 let trainCarriageElement = document.getElementById('train-carriage');
 let randomNumberElement = document.getElementById('random-number');
 let ticketTypeElement = document.getElementById('ticket-type');
+let stadardAgeField = document.getElementById('maggiorenne');
+let overAgeField = document.getElementById('senior');
+let underAgeField = document.getElementById('senior');
+
+
 
 
 // Dichiarare le variabili
@@ -41,8 +46,10 @@ buttonGenerate.addEventListener ('click', function (){
     // Dichiarazione variabili
     const KMNumber= parseInt(totalKmField.value.trim());
     const userAge = parseInt(userAgeField.value.trim());
-    const fullName = fullNameField.value;
-
+    const fullName = fullNameField.value.trim();
+    // const standardAge = stadardAgeField.value;
+    // const underAge = underAgeField.value;
+    // const overAge = overAgeField.value;
     
     totalPrice = pricePerKM * KMNumber;
     if (userAge <= 18) {
@@ -51,6 +58,15 @@ buttonGenerate.addEventListener ('click', function (){
         totalPrice = seniorDiscount * KMNumber
     }
     totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
+
+    // if (underAge == 'minorenne') {
+    //     totalPrice = youngDiscount * KMNumber
+    // } else if (overAge) {
+    //     totalPrice = seniorDiscount * KMNumber
+    // }
+    // totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2)
+
+
 
     // Produzione output
     // Prices
@@ -73,7 +89,7 @@ buttonGenerate.addEventListener ('click', function (){
     }
 
     trainCarriageElement.innerText = Math.floor(Math.random() * 10) + 1;
-    randomNumberElement.innerText = Math.floor(Math.random() * 99999) + 1;
+    randomNumberElement.innerText = '9' + Math.floor(Math.random() * 9999) + 1;
 })
 
 buttonDelete.addEventListener('click', function() {
