@@ -16,7 +16,8 @@ let youngDiscountElement = document.getElementById('young-sale');
 let seniorDiscountElement = document.getElementById('senior-sale');
 let totalKmField = document.getElementById('total-km');
 let userAgeField = document.getElementById('user-age');
-const button = document.querySelector('button');
+const button = document.querySelector('.button-generate');
+const form = document.querySelector('form');
 
 
 // Dichiarare le variabili
@@ -66,6 +67,8 @@ button.addEventListener ('click', function (){
         discountPrice = (Math.round(((pricePerKM * KMNumber) - (totalPrice)) * 100) / 100).toFixed(2)
         seniorDiscountElement.innerHTML = `Hai risparmiato: <strong>${discountPrice.replace('.', ',')}€</strong>`;
     }
+
+    form.reset();
 })
 
 

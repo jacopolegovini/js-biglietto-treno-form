@@ -1,0 +1,17 @@
+/* General */
+
+body {
+    background-color: #B6154F;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
